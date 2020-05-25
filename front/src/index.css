@@ -1,0 +1,11 @@
+/* purgecss start ignore */
+@tailwind base;
+/* purgecss end ignore */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+/* purgecss start ignore */
+@tailwind components;
+/* purgecss end ignore */
+
+@tailwind utilities;
