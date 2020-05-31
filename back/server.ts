@@ -3,8 +3,7 @@ import {
   ServerRequest,
 } from "https://deno.land/std/http/server.ts";
 import { acceptWebSocket, acceptable } from "https://deno.land/std/ws/mod.ts";
-import bingo from "./bingo.ts";
-import BingoController from "./BingoController.ts";
+import BingoController from "./src/bingo/BingoController.ts";
 
 listenAndServe({ port: 3000 }, async (req: ServerRequest) => {
   if (req.method === "GET" && req.url === "/ws") {
@@ -18,7 +17,6 @@ listenAndServe({ port: 3000 }, async (req: ServerRequest) => {
 
       const bingoController = new BingoController(ws);
       bingoController.watch();
-      // bingo(ws);
     }
   }
 });

@@ -9,14 +9,14 @@ export default class MemoryRoomsRepository implements IRoomsRepository {
   }
 
   public save(roomEntity: RoomEntity) {
-    MemoryRoomsRepository._rooms.set(roomEntity.name, roomEntity);
+    MemoryRoomsRepository._rooms.set(roomEntity.id, roomEntity);
   }
 
   public remove(roomName: string) {
     MemoryRoomsRepository._rooms.delete(roomName);
   }
 
-  public getByName(roomName: string) {
-    return MemoryRoomsRepository._rooms.get(roomName);
+  public getById(roomId: string) {
+    return MemoryRoomsRepository._rooms.get(roomId);
   }
 }

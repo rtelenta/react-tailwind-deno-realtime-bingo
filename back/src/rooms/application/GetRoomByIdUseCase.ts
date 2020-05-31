@@ -1,13 +1,13 @@
 import IRoomsRepository from "./../domain/IRoomsRepository.ts";
 
-export default class GetRoomByNameUseCase {
+export default class GetRoomByIdUseCase {
   private _repository: IRoomsRepository;
 
   constructor(repository: IRoomsRepository) {
     this._repository = repository;
   }
 
-  public execute(roomName: string) {
-    return this._repository.getByName(roomName)?.toJSON();
+  public execute(roomId: string) {
+    return this._repository.getById(roomId)?.toJSON();
   }
 }

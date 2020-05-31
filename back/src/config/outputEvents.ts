@@ -1,0 +1,3 @@
+export const UPDATE_ROOM_USER_LIST = "UPDATE_ROOM_USER_LIST";
+export const ROOM_IS_CREATED = "ROOM_IS_CREATED";
+export const ROOM_INFO = "ROOM_INFO";

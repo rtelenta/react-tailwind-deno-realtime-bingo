@@ -7,8 +7,8 @@ export default class RemoveUserFromRoomUseCase {
     this._repository = repository;
   }
 
-  public execute(roomName: string, userId: string) {
-    const entity = this._repository.getByName(roomName);
+  public execute(roomId: string, userId: string) {
+    const entity = this._repository.getById(roomId);
 
     if (entity) {
       entity.removeUser(userId);

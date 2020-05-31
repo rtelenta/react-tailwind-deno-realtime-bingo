@@ -1,6 +1,6 @@
 import IUsersRepository from "../domain/IUsersRepository.ts";
 
-type userUpdateFields = { name: string; roomName: string };
+type userUpdateFields = { name?: string; roomId?: string };
 
 export default class UpdateUserUseCase {
   private _repository: IUsersRepository;
@@ -9,12 +9,12 @@ export default class UpdateUserUseCase {
     this._repository = repository;
   }
 
-  public execute(userId: string, { name, roomName }: userUpdateFields) {
+  public execute(userId: string, { name, roomId }: userUpdateFields) {
     const userEntity = this._repository.getById(userId);
 
     if (userEntity) {
-      userEntity.name = name;
-      userEntity.roomName = roomName;
+      if (name) userEntity.name = name;
+      if (roomId) userEntity.roomId = roomId;
 
       this._repository.save(userEntity);
     }
